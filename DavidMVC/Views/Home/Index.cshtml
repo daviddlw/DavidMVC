@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<h2>@ViewBag.Message</h2>
+<p>
+    To learn more about ASP.NET MVC visit <a href="http://asp.net/mvc" title="ASP.NET MVC Website">
+        http://asp.net/mvc</a>.
+    <br />
+    <strong>
+        @{
+            IList<string> mvcExecuteLs = ViewBag.ExcuteLs as List<string>;
+
+            if (mvcExecuteLs.Count > 0)
+            {
+                foreach (var item in mvcExecuteLs)
+                {
+            <strong>@item</strong>
+            <br />
+                }
+            }
+        }
+    </strong>
+</p>
