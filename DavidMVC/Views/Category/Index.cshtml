@@ -1,0 +1,17 @@
+﻿@model List<DavidMVC.Models.Category>
+@{
+    ViewBag.Title = "ShowCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    ShowCategory</h2>
+<p>
+    @*@Html.ActionLink("首页", "Index", "Home")*@
+</p>
+<p>
+    @foreach (var item in Model)
+    {
+@*@Html.ActionLink("ShowCategory", "Category", new { id = item.CategoryId });*@
+        <a href="@Url.Action("ShowCategory", "Category", new { id = item.CategoryId })">@item.CategoryName</a><br />
+    }
+</p>

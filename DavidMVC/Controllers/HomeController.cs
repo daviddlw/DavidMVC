@@ -16,13 +16,22 @@ namespace DavidMVC.Controllers
         {
             ViewBag.Message = "Welcome to ASP.NET MVC!";
             ViewBag.ExcuteLs = executeInfoLs;
-
-            return View();
+            return View("Index");
         }
 
         public ActionResult About()
         {
-            return View();
+            return View("About");
+        }
+
+        public ActionResult HttpExecuteInfo()
+        {
+            return View("HttpExecuteInfo");
+        }
+
+        public ActionResult UrlRoutePage()
+        {
+            return View("UrlRoutePage");
         }
 
         protected override void OnAuthorization(AuthorizationContext filterContext)
@@ -33,10 +42,10 @@ namespace DavidMVC.Controllers
         }
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
-        {
+        {            
             executeInfo = string.Format("{0}，Before Action Execute!", executeIndex);
             executeInfoLs.Add(executeInfo);
-            executeIndex++;
+            executeIndex++;            
         }
 
         protected override void OnActionExecuted(ActionExecutedContext filterContext)

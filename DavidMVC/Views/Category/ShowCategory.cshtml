@@ -1,0 +1,13 @@
+﻿@model DavidMVC.Models.Category
+@{
+    ViewBag.Title = "ShowCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    ShowCategory</h2>
+<p>
+    @Html.ActionLink("首页", "Index", "Home");
+</p>
+<p>
+     <span>欢迎来到，@Model.CategoryId：@Model.CategoryName 页面</span>
+</p>
